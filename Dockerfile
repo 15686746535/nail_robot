@@ -1,3 +1,4 @@
 FROM daocloud.io/php:5.6-apache
-COPY config/php.ini /usr/local/etc/php
+MAINTAINER 714699882@qq.com
+EXPOSE 80,443
 COPY . /var/www/html/
