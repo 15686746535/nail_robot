@@ -1,0 +1,103 @@
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+
+        钉钉机器人推送
+
+    </title>
+
+    <!--
+
+    导入jq库
+
+    -->
+
+    <script src="src/jquery-2.1.1.js"></script>
+
+
+
+    <style>
+
+        *{
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        #sum{
+
+            margin: 0 auto;
+
+            width: 300px;
+
+            height: 50px;
+
+            background: #000;
+
+            color: green;
+
+            text-align: center;
+
+            line-height: 50px;
+
+            font-size: 45px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+
+<div align="center" id="jia">
+
+
+
+    <form >
+
+        请输入你要推送的手机号码:<br>
+
+        <input type="text" name="jiasu1" id="jiasu1">
+        <br>
+        <input type="submit" value="Submit" onclick="return post()">
+    </form>
+
+
+</div>
+
+<script>
+
+    function post(){
+
+        var jiasu1 = $('#jiasu1').val();
+
+
+        // alert(jiasu1+"|"+jiasu2);
+
+        $.post('jiafa.php', {jiasu1:jiasu1}, function(data){
+
+            $('#sum').text(data.content);
+
+        }, 'json');
+
+        return false;
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
